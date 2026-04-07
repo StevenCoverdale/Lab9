@@ -22,7 +22,6 @@ class TaskListViewController: UIViewController {
         title = "Tasks"
         tableView.dataSource = self
         tableView.delegate = self
-        fetchTasks()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -56,29 +55,33 @@ class TaskListViewController: UIViewController {
     func editTask(at indexPath: IndexPath) {
         let task = tasks[indexPath.row]
 
-        let alert = UIAlertController(title: "Edit Task",
-                                      message: nil,
-                                      preferredStyle: .alert)
-        alert.addTextField { field in
-            field.text = task.title
-        }
+        // Delay ensures swipe animation finishes before presenting alert
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            let alert = UIAlertController(title: "Edit Task",
+                                          message: nil,
+                                          preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { _ in
-            guard let newText = alert.textFields?.first?.text,
-                  !newText.trimmingCharacters(in: .whitespaces).isEmpty else { return }
-
-            task.title = newText
-
-            do {
-                try self.context.save()
-                self.tableView.reloadRows(at: [indexPath], with: .automatic)
-            } catch {
-                print("Error editing task:", error)
+            alert.addTextField { field in
+                field.text = task.title
             }
-        }))
 
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        present(alert, animated: true)
+            alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { _ in
+                guard let newText = alert.textFields?.first?.text,
+                      !newText.trimmingCharacters(in: .whitespaces).isEmpty else { return }
+
+                task.title = newText
+
+                do {
+                    try self.context.save()
+                    self.tableView.reloadRows(at: [indexPath], with: .automatic)
+                } catch {
+                    print("Error editing task:", error)
+                }
+            }))
+
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            self.present(alert, animated: true)
+        }
     }
 }
 
@@ -109,8 +112,8 @@ extension TaskListViewController: UITableViewDataSource, UITableViewDelegate {
 
         let editAction = UIContextualAction(style: .normal,
                                             title: "Edit") { _, _, done in
-            self.editTask(at: indexPath)
             done(true)
+            self.editTask(at: indexPath)
         }
 
         return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
