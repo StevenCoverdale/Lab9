@@ -11,7 +11,7 @@
         <!--Add Task View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AddTaskViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AddTaskViewController" customModule="Lab9" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,6 +23,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="View Task"/>
                                 <connections>
                                     <action selector="viewTasksTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C9N-cb-2WL"/>
+                                    <segue destination="zk0-ty-itI" kind="show" identifier="showTasks" id="4Sb-il-0vO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qsn-C0-lcK">
@@ -48,7 +49,7 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="taskTextField" destination="eYd-3f-uHK" id="A1S-ii-VuS"/>
+                        <outlet property="taskTextField" destination="eYd-3f-uHK" id="RG2-ST-tgo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -76,12 +77,13 @@
         <!--Task List View Controller-->
         <scene sceneID="u9k-BU-VwW">
             <objects>
-                <viewController id="zk0-ty-itI" customClass="TaskListViewController" sceneMemberID="viewController">
+                <viewController id="zk0-ty-itI" customClass="TaskListViewController" customModule="Lab9" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="k5B-Yw-HvK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </tableView>
+                    <navigationItem key="navigationItem" id="O7M-Jj-cQT"/>
                     <connections>
                         <outlet property="tableView" destination="k5B-Yw-HvK" id="mIT-8q-Rqo"/>
                     </connections>
