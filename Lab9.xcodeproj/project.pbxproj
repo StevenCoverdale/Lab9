@@ -14,6 +14,7 @@
 		07899A8D2F85B9FF000FF012 /* Lab9.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07899A8B2F85B9FF000FF012 /* Lab9.xcdatamodeld */; };
 		07899A8F2F85BA03000FF012 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07899A8E2F85BA03000FF012 /* Assets.xcassets */; };
 		07899A922F85BA03000FF012 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07899A902F85BA03000FF012 /* LaunchScreen.storyboard */; };
+		07899A9A2F85C4C0000FF012 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07899A992F85C4C0000FF012 /* AddTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		07899A8E2F85BA03000FF012 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07899A912F85BA03000FF012 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07899A932F85BA03000FF012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07899A992F85C4C0000FF012 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				07899A902F85BA03000FF012 /* LaunchScreen.storyboard */,
 				07899A932F85BA03000FF012 /* Info.plist */,
 				07899A8B2F85B9FF000FF012 /* Lab9.xcdatamodeld */,
+				07899A992F85C4C0000FF012 /* AddTaskViewController.swift */,
 			);
 			path = Lab9;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				07899A8D2F85B9FF000FF012 /* Lab9.xcdatamodeld in Sources */,
 				07899A832F85B9FE000FF012 /* AppDelegate.swift in Sources */,
 				07899A852F85B9FE000FF012 /* SceneDelegate.swift in Sources */,
+				07899A9A2F85C4C0000FF012 /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
