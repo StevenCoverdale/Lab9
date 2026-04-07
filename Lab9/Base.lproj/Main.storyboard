@@ -77,12 +77,14 @@
         <scene sceneID="u9k-BU-VwW">
             <objects>
                 <viewController id="zk0-ty-itI" customClass="TaskListViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="t7S-O2-O39">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="k5B-Yw-HvK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="GTl-5t-Uop"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
+                    </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="k5B-Yw-HvK" id="mIT-8q-Rqo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wsu-4O-kyv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
